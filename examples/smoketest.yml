@@ -59,7 +59,7 @@ jobs:
     # ncarcisl/cisldev-{arch}-{os}-{compiler}-{mpi}{-cuda if gpu=cuda}:devel
     # Example: ncarcisl/cisldev-x86_64-ubuntu-nvhpc-openmpi:devel
     container:
-      image: ncarcisl/cisldev-${{ matrix.arch }}-${{ inputs.os }}-${{ matrix.compiler }}-${{ matrix.mpi }}${{ matrix.gpu == 'cuda' && '-cuda' || '' }}:devel
+      image: ncarcisl/hpcdev-${{ matrix.arch }}:${{ inputs.os }}-${{ matrix.compiler }}-${{ matrix.mpi }}${{ matrix.gpu == 'cuda' && '-cuda' || '' }}-latest
     
     steps:
       - uses: actions/checkout@v4
